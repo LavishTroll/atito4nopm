@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./styles/styles.css">
+    <title>DickPick Games</title>
+</head>
+
+<body>
+    <main class="wrapper">
+        <div class="screen" id="screen">
+            <div class="screen-status" id="status" data-status="">
+                <span class="msg-timeout">
+                    Дедлайн просран, давай ещё раз...
+                </span>
+                <span class="msg-loose">
+                    Да, это тебе не на заборах рисовать. <br>
+                    Давай ещё раз...
+                </span>
+                <span class="msg-win">
+                    Красавчик! Всех поборол!
+                </span>
+            </div>
+            <button class="btn-start" id="start">
+                START
+            </button>
+            <div class="screen-alert">
+                ТЫ ЗНАЕШЬ, ЧТО ДЕЛАТЬ :)
+            </div>
+        </div>
+        <ul class="grid" id="grid">
+            <li class="grid__item stats">
+                <ul class="lives" id="lives">
+                    <li class="lives-item"></li>
+                    <li class="lives-item"></li>
+                    <li class="lives-item"></li>
+                    <li class="lives-item"></li>
+                    <li class="lives-item"></li>
+                </ul>
+                <div class="timer" id="timer">1:00</div>
+            </li>
+            <li class="grid__item">
+                <div id="yarik-k" class="place">
+                    <img src="./assets/bg.svg">
+                    <img src="./assets/gang.png" alt="GANGED" class="gang">
+                    <img src="./assets/yarik_k-1.png" class="face face-back dynamic-part">
+                    <img src="./assets/yarik_k-2.png" class="face face-front dynamic-part">
+                    <img src="./assets/body.svg" class="body dynamic-part">
+                    <img src="./assets/chair.svg" class="chair">
+                </div>
+                <div class="speech"></div>
+            </li>
+            <li class="grid__item">
+                <div id="pasha" class="place">
+                    <img src="./assets/bg.svg">
+                    <img src="./assets/gang.png" alt="GANGED" class="gang">
+                    <img src="./assets/pasha-1.png" class="face face-back dynamic-part">
+                    <img src="./assets/pasha-2.png" class="face face-front dynamic-part">
+                    <img src="./assets/body.svg" class="body dynamic-part">
+                    <img src="./assets/chair.svg" class="chair">
+                </div>
+                <div class="speech">ДЕЛАТЬ МЫ ЭТОГО, КОНЕЧНО ЖЕ, НЕ БУДЕМ</div>
+            </li>
+            <li class="grid__item">
+                <div id="alex" class="place">
+                    <img src="./assets/bg.svg">
+                    <img src="./assets/gang.png" alt="GANGED" class="gang">
+                    <img src="./assets/alex-1.png" class="face face-back dynamic-part">
+                    <img src="./assets/alex-2.png" class="face face-front dynamic-part">
+                    <img src="./assets/body.svg" class="body dynamic-part">
+                    <img src="./assets/chair.svg" class="chair">
+                </div>
+                <div class="speech"></div>
+            </li>
+            <li class="grid__item">
+                <div id="anton" class="place anton-place">
+                    <img src="./assets/bg.svg">
+                    <img src="./assets/gang.png" alt="GANGED" class="gang">
+                    <img src="./assets/anton-1.png" class="face face-back dynamic-part">
+                    <img src="./assets/anton-2.png" class="face face-front dynamic-part">
+                    <img src="./assets/body.svg" class="body dynamic-part">
+                    <img src="./assets/chair.svg" class="chair">
+                </div>
+                <div class="speech"></div>
+            </li>
+            <li class="grid__item">
+                <div id="yarik-l" class="place">
+                    <img src="./assets/bg.svg">
+                    <img src="./assets/gang.png" alt="GANGED" class="gang">
+                    <img src="./assets/yarik_l-1.png" class="face face-back dynamic-part">
+                    <img src="./assets/yarik_l-2.png" class="face face-front dynamic-part">
+                    <img src="./assets/body.svg" class="body dynamic-part">
+                    <img src="./assets/chair.svg" class="chair">
+                </div>
+                <div class="speech"></div>
+            </li>
+            <li class="grid__item">
+                <div id="slavik" class="place">
+                    <img src="./assets/bg.svg">
+                    <img src="./assets/gang.png" alt="GANGED" class="gang">
+                    <img src="./assets/slavik-1.png" class="face face-back dynamic-part">
+                    <img src="./assets/slavik-2.png" class="face face-front dynamic-part">
+                    <img src="./assets/body.svg" class="body dynamic-part">
+                    <img src="./assets/chair.svg" class="chair">
+                </div>
+                <div class="speech"></div>
+            </li>
+            <li class="grid__item">
+                <div id="bodya" class="place">
+                    <img src="./assets/bg.svg">
+                    <img src="./assets/gang.png" alt="GANGED" class="gang">
+                    <img src="./assets/bodya-1.png" class="face face-back dynamic-part">
+                    <img src="./assets/bodya-2.png" class="face face-front dynamic-part">
+                    <img src="./assets/body.svg" class="body dynamic-part">
+                    <img src="./assets/chair.svg" class="chair">
+                </div>
+                <div class="speech"></div>
+            </li>
+            <li class="grid__item">
+                <div id="ruslan" class="place">
+                    <img src="./assets/bg.svg">
+                    <img src="./assets/gang.png" alt="GANGED" class="gang">
+                    <img src="./assets/ruslan-1.png" class="face face-back dynamic-part">
+                    <img src="./assets/ruslan-2.png" class="face face-front dynamic-part">
+                    <img src="./assets/body.svg" class="body dynamic-part">
+                    <img src="./assets/chair.svg" class="chair">
+                </div>
+                <div class="speech"></div>
+            </li>
+            <li class="grid__item">
+                <div id="andrew" class="place">
+                    <img src="./assets/bg.svg">
+                    <img src="./assets/gang.png" alt="GANGED" class="gang">
+                    <img src="./assets/andrew-1.png" class="face face-back dynamic-part">
+                    <img src="./assets/andrew-2.png" class="face face-front dynamic-part">
+                    <img src="./assets/body.svg" class="body dynamic-part">
+                    <img src="./assets/chair.svg" class="chair">
+                </div>
+                <div class="speech"></div>
+            </li>
+        </ul>
+    </main>
+
+    <script src="./script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,32 @@
+.grid {
+    max-width: 100%;
+    max-height: 100%;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(5, Min(40vmin, 17vmax));
+    grid-template-rows: repeat(2, Min(40vmin, 17vmax));
+    grid-gap: Min(12vmin, 4vmax) Min(6vmin, 2vmax);
+    justify-items: center;
+    align-items: center;
+
+    &__item {
+        width: 100%;
+        height: 100%;
+        position: relative;
+        display: flex;
+        justify-content: center;
+
+        @each $var in 2, 3, 6, 7, 8 {
+            &:nth-child(#{$var}) {
+                .place {
+                    transform: scaleX(-1);
+                }
+
+                .speech::before {
+                    right: auto;
+                    left: 20%;
+                }
+            }
+        }
+    }
+}

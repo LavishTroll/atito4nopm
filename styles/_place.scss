@@ -1,0 +1,167 @@
+.place {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+    cursor: pointer;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+
+    img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        pointer-events: none;
+        transition: all 0.1s ease;
+        opacity: 1;
+    }
+
+    .gang {
+        display: none;
+    }
+
+    .dynamic-part {
+        will-change: transform;
+        transform: translate(0 0);
+    }
+
+    .face {
+        &-front {
+            display: none;
+        }
+    }
+
+    &.free {
+        .dynamic-part {
+            transform: translate(-10%, 3%);
+            opacity: 0;
+        }
+    }
+
+    &.busted {
+        .gang {
+            display: block;
+        }
+
+        .face {
+            &-front {
+                display: block;
+            }
+
+            &-back {
+                display: none;
+            }
+        }
+
+        &::before {
+            animation: busted 3s ease 0.3s both;
+        }
+    }
+
+    &.miss {
+        .face {
+            &-front {
+                display: block;
+            }
+
+            &-back {
+                display: none;
+            }
+        }
+
+        & + .speech {
+            animation: pop-up 3s ease 0.1s both;
+        }
+    }
+
+    &::before {
+        will-change: opacity, transform;
+        content: '';
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: url('../assets/Anton_1000.png') no-repeat center;
+        background-size: contain;
+        z-index: 0;
+        transform: translateY(20%);
+    }
+
+    &.anton-place::before {
+        background-image: url('../assets/djin_1000.png');
+    }
+}
+
+.speech {
+    will-change: opacity, transform;
+    position: absolute;
+    text-align: center;
+    bottom: 90%;
+    background-color: #000;
+    color: #fff;
+    font-size: Min(0.875rem, 1.5vmax);
+    font-weight: 700;
+    padding: 0.5rem;
+    max-width: 100%;
+    opacity: 0;
+    transform: translateY(50%);
+
+    &::before {
+        content: '';
+        display: block;
+        position: absolute;
+        top: 100%;
+        right: 20%;
+        width: 0;
+        height: 0;
+        border-left: 5px solid transparent;
+        border-right: 5px solid transparent;
+        border-top: 10px solid #000;
+    }
+}
+
+@keyframes busted {
+    0% {
+        transform: translateY(20%);
+    }
+
+    15% {
+        transform: translateY(0);
+    }
+
+    80% {
+        transform: translateY(0);
+    }
+
+    100% {
+        transform: translateY(20%);
+    }
+}
+
+@keyframes pop-up {
+    0% {
+        transform: translateY(50%);
+        opacity: 0;
+    }
+
+    15% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+
+    95% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(50%);
+        opacity: 0;
+    }
+}
