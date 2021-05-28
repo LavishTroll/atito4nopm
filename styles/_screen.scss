@@ -59,6 +59,10 @@
             transform: translateY(0) rotateX(0);
             transition: all 0.6s ease;
         }
+
+        .age-control {
+            opacity: 0;
+        }
     }
 
     &-alert {
@@ -142,6 +146,56 @@
 
     &::after {
         bottom: 0;
+    }
+}
+
+.age-control {
+    position: absolute;
+    bottom: 15%;
+    z-index: 200;
+    color: #fff;
+    opacity: 1;
+    transition: opacity .3s;
+
+    input {
+        width: 0;
+        height: 0;
+        margin: 0;
+
+        &::before,
+        &::after {
+            content: '';
+            display: block;
+            position: absolute;
+            left: -2.5em;
+            top: -0.25em;
+        }
+
+        &::before {
+            width: 1.5em;
+            height: 1.5em;
+            border-radius: 2px;
+            border: 2px solid #aaa;
+        }
+
+        &::after {
+            width: 0.75em;
+            height: 1.75em;
+            border: solid #fff;
+            border-width: 0 2px 2px 0;
+            transform: rotate(50deg) translate(20%, -100%);
+            opacity: 0;
+            transition: all .15s ease;
+        }
+
+        &:checked::after {
+            transform: rotate(40deg) translate(20%, -45%);
+            opacity: 1;
+        }
+    }
+
+    label {
+        cursor: pointer;
     }
 }
 
